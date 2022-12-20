@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/style/all.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">景點網站</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+          <div class="d-flex" id="loginFunc">
+            <a class="btn btn-primary me-2" href="/login.html">
+              <span class="me-1">登入</span>
+              <i class="fas fa-sign-in-alt"></i>
+            </a>
+            <a class="btn btn-primary" href="/register.html">
+              <span class="me-1">註冊</span>
+              <i class="fas fa-user-plus"></i>
+            </a>
+          </div>
+          <div class="d-none" id="userFunc">
+            <span class="fs-4 me-2" id="userName"></span>
+            <a class="btn btn-primary me-2" id="attractionListBtn" href="/personalFavoriteList.html">
+              <span class="me-1">收藏列表</span>
+              <i class="fas fa-user"></i>
+            </a>
+            <a class="btn btn-primary me-2" id="adminBtn" href="/admin.html">
+              <span class="me-1">後台</span>
+              <i class="fas fa-tools"></i>
+            </a>
+            <button class="btn btn-primary" onclick="signout()">
+              <span class="me-1">登出</span>
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <%- contents %>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/all.js"></script>
+  </body>
+
+</html>
