@@ -26,16 +26,16 @@ function init(){
     userFuncNode.className = "d-none"
   }
   if(localStorage.getItem('userAuth') === 'user') document.querySelector('#adminBtn').className = 'btn btn-primary me-2 d-none'
-  if(window.location.pathname === "/attraction.html"){
+  if(window.location.pathname === "/2022VueTrainingProjectPretestPage/attraction.html"){
     attractionContentRender();
   } else if(window.location.pathname === "/") { 
     attractionListGet()
     if(loginStatus != null )favoriteGet()
-  } else if(window.location.pathname === "/personalFavoriteList.html"){
+  } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/personalFavoriteList.html"){
     favoriteGet()
-  } else if(window.location.pathname === "/admin.html"){
+  } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/admin.html"){
     attractionListGet()
-  }else if(window.location.pathname === "/attractionEdit.html"){
+  }else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/attractionEdit.html"){
     attractionEditDataGet()
   }
 }
@@ -86,8 +86,8 @@ function signinPost(){
     localStorage.setItem('userEmail', res.data.user.email);
     localStorage.setItem('userID', res.data.user.id);
     localStorage.setItem('userAuth', res.data.user.auth);
-    if(res.data.user.auth === "user") window.location = '/'
-    if(res.data.user.auth === "admin") window.location = '/admin.html'
+    if(res.data.user.auth === "user") window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/'
+    if(res.data.user.auth === "admin") window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/admin.html'
   }).catch((err)=>{
     console.log(err)
     if(err.response.data === 'Cannot find user') alert('此電子郵件尚未註冊！')
@@ -116,7 +116,7 @@ function attractionListGet(){
 
 function attractionListRender(category){
   if(category === undefined) filteredList = attractionList;
-  if(window.location.pathname === '/'){
+  if(window.location.pathname === '/2022VueTrainingProjectPretestPage/'){
     attractionListNode.innerHTML = ''
     filteredList.forEach((item)=>{
       attractionListNode.innerHTML += `
@@ -137,7 +137,7 @@ function attractionListRender(category){
       </div>
       `
     })
-  }else if(window.location.pathname === '/admin.html'){
+  }else if(window.location.pathname === '/2022VueTrainingProjectPretestPage/admin.html'){
     attractionTableNode.innerHTML = ''
     filteredList.forEach((item)=>{
       attractionTableNode.innerHTML += `
@@ -175,7 +175,7 @@ function attractionContentRender(){
 function favoriteGet(){
   let userID = localStorage.getItem('userID')
   let userToken = localStorage.getItem('loginToken')
-  if(userID === null && window.location.pathname === "/personalFavoriteList.html") window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/'
+  if(userID === null && window.location.pathname === "/2022VueTrainingProjectPretestPage/personalFavoriteList.html") window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/'
    axios({
     method: 'get',
     url: `${apiUrl}/favorite/${userID}`,
@@ -184,8 +184,8 @@ function favoriteGet(){
     },
   }).then((res)=>{
     favoriteList = res.data.favoriteItem
-    if(window.location.pathname === "/") favoriteRender()
-    if(window.location.pathname === "/personalFavoriteList.html") personalFavoriteListRender();
+    if(window.location.pathname === "/2022VueTrainingProjectPretestPage/") favoriteRender()
+    if(window.location.pathname === "/2022VueTrainingProjectPretestPage/personalFavoriteList.html") personalFavoriteListRender();
   })
 }
 
@@ -225,7 +225,7 @@ function favoritePut(attractionID){
       }
     })
     favoriteRender()
-    if(window.location.pathname === "/personalFavoriteList.html") personalFavoriteListRender();
+    if(window.location.pathname === "/2022VueTrainingProjectPretestPage/personalFavoriteList.html") personalFavoriteListRender();
   }
 }
 
