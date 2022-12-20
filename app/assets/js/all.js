@@ -28,15 +28,19 @@ function init(){
   if(localStorage.getItem('userAuth') === 'user') document.querySelector('#adminBtn').className = 'btn btn-primary me-2 d-none'
   if(window.location.pathname === "/2022VueTrainingProjectPretestPage/attraction.html"){
     attractionContentRender();
-  } else if(window.location.pathname === "/") { 
+  } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/") { 
     attractionListGet()
     if(loginStatus != null )favoriteGet()
   } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/personalFavoriteList.html"){
     favoriteGet()
   } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/admin.html"){
     attractionListGet()
-  }else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/attractionEdit.html"){
+  } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/attractionEdit.html"){
     attractionEditDataGet()
+  } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/login.html" && loginStatus != null){
+    window.location.href = '/2022VueTrainingProjectPretestPage/'
+  } else if(window.location.pathname === "/2022VueTrainingProjectPretestPage/admin.html" && loginStatus != null){
+    window.location.href = '/2022VueTrainingProjectPretestPage/'
   }
 }
 
