@@ -31,7 +31,7 @@ function init() {
 
   if (window.location.pathname === "/2022VueTrainingProjectPretestPage/attraction.html") {
     attractionContentRender();
-  } else if (window.location.pathname === "/") {
+  } else if (window.location.pathname === "/2022VueTrainingProjectPretestPage/") {
     attractionListGet();
     if (loginStatus != null) favoriteGet();
   } else if (window.location.pathname === "/2022VueTrainingProjectPretestPage/personalFavoriteList.html") {
@@ -40,6 +40,10 @@ function init() {
     attractionListGet();
   } else if (window.location.pathname === "/2022VueTrainingProjectPretestPage/attractionEdit.html") {
     attractionEditDataGet();
+  } else if (window.location.pathname === "/2022VueTrainingProjectPretestPage/login.html" && loginStatus != null) {
+    window.location.href = '/2022VueTrainingProjectPretestPage/';
+  } else if (window.location.pathname === "/2022VueTrainingProjectPretestPage/admin.html" && loginStatus != null) {
+    window.location.href = '/2022VueTrainingProjectPretestPage/';
   }
 }
 
