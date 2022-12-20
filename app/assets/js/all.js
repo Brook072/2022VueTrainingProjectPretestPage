@@ -67,7 +67,7 @@ function signupPost(){
         favoriteItem:[]
       }
     })
-    window.location.href = '/'
+    window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/'
   });
 }
 
@@ -122,7 +122,7 @@ function attractionListRender(category){
       attractionListNode.innerHTML += `
       <div class="col">
         <div class="card mx-2 text-decoration-none text-dark">
-          <a href="attraction.html?id=${item.id}">
+          <a https://brook072.github.io/2022VueTrainingProjectPretestPage/attraction.html?id=${item.id}">
             <img class="card-img-top" style="height: 200px" src="${item.pictureUrl}" alt="Card image cap">
           </a>
           <div class="card-body">
@@ -145,7 +145,7 @@ function attractionListRender(category){
         <td>${item.title}</td>
         <td>${item.description}</td>
         <td>
-          <a class="btn btn-info mb-2" href="/attractionEdit.html?id=${item.id}">
+          <a class="btn btn-info mb-2" href="https://brook072.github.io/2022VueTrainingProjectPretestPage/attractionEdit.html?id=${item.id}">
             <span class="me-1">編輯</span>
             <i class="fas fa-edit"></i>
           </a>
@@ -175,7 +175,7 @@ function attractionContentRender(){
 function favoriteGet(){
   let userID = localStorage.getItem('userID')
   let userToken = localStorage.getItem('loginToken')
-  if(userID === null && window.location.pathname === "/personalFavoriteList.html") window.location.href = '/'
+  if(userID === null && window.location.pathname === "/personalFavoriteList.html") window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/'
    axios({
     method: 'get',
     url: `${apiUrl}/favorite/${userID}`,
@@ -203,7 +203,7 @@ function favoriteRender(){
 function favoritePut(attractionID){
   if(loginStatus === null){
     alert('請先進行登入！')
-    window.location.href = "/login.html"
+    window.location.href = "https://brook072.github.io/2022VueTrainingProjectPretestPage/login.html"
   }else{
     let userID = localStorage.getItem('userID')
     let userToken = localStorage.getItem('loginToken')
@@ -238,7 +238,7 @@ function personalFavoriteListRender(){
       personalFavoriteListNode.innerHTML += `
       <div class="col">
         <div class="card mx-2 text-decoration-none text-dark">
-            <a href="attraction.html?id=${favoriteData.id}">
+            <a href="https://brook072.github.io/2022VueTrainingProjectPretestPage/attraction.html?id=${favoriteData.id}">
               <img class="card-img-top" style="height: 200px" src="${favoriteData.pictureUrl}" alt="Card image cap">
             </a>
             <div class="card-body">
@@ -275,7 +275,7 @@ function attractionCreatePost(){
     }
   }).then((res)=>{
     if( res.status === 201 )alert('新增成功！')
-    window.location.href = '/admin.html'
+    window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/admin.html'
   })
 }
 
