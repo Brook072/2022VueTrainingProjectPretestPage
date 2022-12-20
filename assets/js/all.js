@@ -70,7 +70,7 @@ function signupPost() {
         favoriteItem: []
       }
     });
-    window.location.href = '/';
+    window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/';
   });
 }
 
@@ -123,12 +123,12 @@ function attractionListRender(category) {
   if (window.location.pathname === '/') {
     attractionListNode.innerHTML = '';
     filteredList.forEach(function (item) {
-      attractionListNode.innerHTML += "\n      <div class=\"col\">\n        <div class=\"card mx-2 text-decoration-none text-dark\">\n          <a href=\"attraction.html?id=".concat(item.id, "\">\n            <img class=\"card-img-top\" style=\"height: 200px\" src=\"").concat(item.pictureUrl, "\" alt=\"Card image cap\">\n          </a>\n          <div class=\"card-body\">\n            <div class=\"d-flex justify-content-between\">\n              <h4 class=\"card-title\">").concat(item.title, "</h4>\n              <i class=\"fas fa-heart text-dark\" data-id=\"attraction-").concat(item.id, "\" onclick=\"favoritePut('").concat(item.id, "')\"></i>\n            </div>\n            <p class=\"card-text\">").concat(item.area, "</p>\n            <p class=\"card-text text-truncate\">").concat(item.description, "</p>\n          </div>\n        </div>\n      </div>\n      ");
+      attractionListNode.innerHTML += "\n      <div class=\"col\">\n        <div class=\"card mx-2 text-decoration-none text-dark\">\n          <a https://brook072.github.io/2022VueTrainingProjectPretestPage/attraction.html?id=".concat(item.id, "\">\n            <img class=\"card-img-top\" style=\"height: 200px\" src=\"").concat(item.pictureUrl, "\" alt=\"Card image cap\">\n          </a>\n          <div class=\"card-body\">\n            <div class=\"d-flex justify-content-between\">\n              <h4 class=\"card-title\">").concat(item.title, "</h4>\n              <i class=\"fas fa-heart text-dark\" data-id=\"attraction-").concat(item.id, "\" onclick=\"favoritePut('").concat(item.id, "')\"></i>\n            </div>\n            <p class=\"card-text\">").concat(item.area, "</p>\n            <p class=\"card-text text-truncate\">").concat(item.description, "</p>\n          </div>\n        </div>\n      </div>\n      ");
     });
   } else if (window.location.pathname === '/admin.html') {
     attractionTableNode.innerHTML = '';
     filteredList.forEach(function (item) {
-      attractionTableNode.innerHTML += "\n        <td scope=\"row\">".concat(item.id, "</td>\n        <td>").concat(item.title, "</td>\n        <td>").concat(item.description, "</td>\n        <td>\n          <a class=\"btn btn-info mb-2\" href=\"/attractionEdit.html?id=").concat(item.id, "\">\n            <span class=\"me-1\">\u7DE8\u8F2F</span>\n            <i class=\"fas fa-edit\"></i>\n          </a>\n          <button class=\"btn btn-danger\" onclick=\"attractionDelete('").concat(item.id, "')\">\n            <span class=\"me-1\">\u522A\u9664</span>\n            <i class=\"fas fa-trash-alt\"></i>\n          </button>\n        </td>\n      ");
+      attractionTableNode.innerHTML += "\n        <td scope=\"row\">".concat(item.id, "</td>\n        <td>").concat(item.title, "</td>\n        <td>").concat(item.description, "</td>\n        <td>\n          <a class=\"btn btn-info mb-2\" href=\"https://brook072.github.io/2022VueTrainingProjectPretestPage/attractionEdit.html?id=").concat(item.id, "\">\n            <span class=\"me-1\">\u7DE8\u8F2F</span>\n            <i class=\"fas fa-edit\"></i>\n          </a>\n          <button class=\"btn btn-danger\" onclick=\"attractionDelete('").concat(item.id, "')\">\n            <span class=\"me-1\">\u522A\u9664</span>\n            <i class=\"fas fa-trash-alt\"></i>\n          </button>\n        </td>\n      ");
     });
   }
 }
@@ -147,7 +147,7 @@ function attractionContentRender() {
 function favoriteGet() {
   var userID = localStorage.getItem('userID');
   var userToken = localStorage.getItem('loginToken');
-  if (userID === null && window.location.pathname === "/personalFavoriteList.html") window.location.href = '/';
+  if (userID === null && window.location.pathname === "/personalFavoriteList.html") window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/';
   axios({
     method: 'get',
     url: "".concat(apiUrl, "/favorite/").concat(userID),
@@ -175,7 +175,7 @@ function favoriteRender() {
 function favoritePut(attractionID) {
   if (loginStatus === null) {
     alert('請先進行登入！');
-    window.location.href = "/login.html";
+    window.location.href = "https://brook072.github.io/2022VueTrainingProjectPretestPage/login.html";
   } else {
     var userID = localStorage.getItem('userID');
     var userToken = localStorage.getItem('loginToken');
@@ -209,7 +209,7 @@ function personalFavoriteListRender() {
   favoriteList.forEach(function (item) {
     axios.get("".concat(apiUrl, "/attractions/").concat(item)).then(function (res) {
       favoriteData = res.data;
-      personalFavoriteListNode.innerHTML += "\n      <div class=\"col\">\n        <div class=\"card mx-2 text-decoration-none text-dark\">\n            <a href=\"attraction.html?id=".concat(favoriteData.id, "\">\n              <img class=\"card-img-top\" style=\"height: 200px\" src=\"").concat(favoriteData.pictureUrl, "\" alt=\"Card image cap\">\n            </a>\n            <div class=\"card-body\">\n              <div class=\"d-flex justify-content-between\">\n                <h4 class=\"card-title\">").concat(favoriteData.title, "</h4>\n                <i class=\"fas fa-heart text-danger\" data-id=\"attraction-").concat(favoriteData.id, "\" onclick=\"favoritePut('").concat(favoriteData.id, "')\"></i>\n              </div>\n              <p class=\"card-text\">").concat(favoriteData.area, "</p>\n              <p class=\"card-text text-truncate\">").concat(favoriteData.description, "</p>\n            </div>\n          </div>\n      </div>\n      ");
+      personalFavoriteListNode.innerHTML += "\n      <div class=\"col\">\n        <div class=\"card mx-2 text-decoration-none text-dark\">\n            <a href=\"https://brook072.github.io/2022VueTrainingProjectPretestPage/attraction.html?id=".concat(favoriteData.id, "\">\n              <img class=\"card-img-top\" style=\"height: 200px\" src=\"").concat(favoriteData.pictureUrl, "\" alt=\"Card image cap\">\n            </a>\n            <div class=\"card-body\">\n              <div class=\"d-flex justify-content-between\">\n                <h4 class=\"card-title\">").concat(favoriteData.title, "</h4>\n                <i class=\"fas fa-heart text-danger\" data-id=\"attraction-").concat(favoriteData.id, "\" onclick=\"favoritePut('").concat(favoriteData.id, "')\"></i>\n              </div>\n              <p class=\"card-text\">").concat(favoriteData.area, "</p>\n              <p class=\"card-text text-truncate\">").concat(favoriteData.description, "</p>\n            </div>\n          </div>\n      </div>\n      ");
     });
   });
 
@@ -234,7 +234,7 @@ function attractionCreatePost() {
     }
   }).then(function (res) {
     if (res.status === 201) alert('新增成功！');
-    window.location.href = '/admin.html';
+    window.location.href = 'https://brook072.github.io/2022VueTrainingProjectPretestPage/admin.html';
   });
 }
 
